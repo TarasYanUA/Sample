@@ -31,6 +31,7 @@ public class BrowserFactory {
         BrowserType browserType = BrowserType.valueOf(getProperties().getProperty("browser"));
         switch (browserType) {
             case CHROME:
+                System.setProperty(Constants.CHROME_DRIVER_PROPERTY, Constants.CHROME_DRIVER_PATH);
                 webDriver = new ChromeDriver();
                 break;
             case FIREFOX:
